@@ -101,9 +101,9 @@ spec:
       - command:
         - /alb-ingress-controller
         args:
-        - --api-url=nks.apigw.ntruss.com
+        - --api-url=nks.apigw.gov-ntruss.com
         - --base-path=/ncloud/v1
-        image: io.kr.ncr.ntruss.com/nks/alb-ingress-controller:0.0.5
+        image: io.ncr.gov-ntruss.com/nks/alb-ingress-controller:0.0.5
         name: alb-ingress-controller
         resources:
           limits:
