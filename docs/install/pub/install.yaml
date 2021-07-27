@@ -103,7 +103,7 @@ spec:
         args:
         - --api-url=nks.apigw.ntruss.com
         - --base-path=/ncloud/v1
-        image: io.kr.ncr.ntruss.com/nks/alb-ingress-controller:0.0.5
+        image: io.kr.ncr.ntruss.com/nks/alb-ingress-controller:0.0.6
         name: alb-ingress-controller
         resources:
           limits:
