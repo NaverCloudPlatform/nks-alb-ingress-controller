@@ -87,6 +87,8 @@ metadata:
   name: alb
   labels:
     app.kubernetes.io/name: alb-ingress-controller
+  annotations:
+    ingressclass.kubernetes.io/is-default-class: "true"
 spec:
   controller: ncloud.com/alb
 
