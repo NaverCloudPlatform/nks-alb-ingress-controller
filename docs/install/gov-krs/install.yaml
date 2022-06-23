@@ -51,6 +51,7 @@ rules:
       - "networking.k8s.io"
     resources:
       - ingresses
+      - ingressclasses
     verbs:
       - get
       - list
@@ -80,6 +81,18 @@ subjects:
     namespace: kube-system
 
 ---
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: alb
+  labels:
+    app.kubernetes.io/name: alb-ingress-controller
+  annotations:
+    ingressclass.kubernetes.io/is-default-class: "true"
+spec:
+  controller: ncloud.com/alb
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -103,7 +116,8 @@ spec:
         args:
         - --api-url=nks.apigw.gov-ntruss.com
         - --base-path=/ncloud/krs-v1
-        image: io.ncr.gov-ntruss.com/nks/alb-ingress-controller:0.3.1
+        - --ingress-class=ncloud.com/alb
+        image: io.ncr.gov-ntruss.com/nks/alb-ingress-controller:0.4.0
         name: alb-ingress-controller
         resources:
           limits:
