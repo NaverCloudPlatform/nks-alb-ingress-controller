@@ -117,13 +117,13 @@ spec:
         - --api-url=nks.apigw.gov-ntruss.com
         - --base-path=/ncloud/v1
         - --ingress-class=ncloud.com/alb
-        image: io.ncr.gov-ntruss.com/nks/alb-ingress-controller:0.4.0
+        image: io.ncr.gov-ntruss.com/nks/alb-ingress-controller:0.4.0-debug-01
         name: alb-ingress-controller
         resources:
           limits:
-            cpu: 100m
-            memory: 30Mi
+            cpu: 200m
+            memory: 180Mi
           requests:
-            cpu: 100m
-            memory: 20Mi
+            cpu: 150m
+            memory: 90Mi
       serviceAccountName: alb-ingress-controller
