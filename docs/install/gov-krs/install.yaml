@@ -108,8 +108,8 @@ spec:
         resources:
           limits:
             cpu: 100m
-            memory: 30Mi
+            memory: 180Mi
           requests:
             cpu: 100m
-            memory: 20Mi
+            memory: 90Mi
       serviceAccountName: alb-ingress-controller
