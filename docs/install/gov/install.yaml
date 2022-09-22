@@ -117,7 +117,7 @@ spec:
         - --api-url=nks.apigw.gov-ntruss.com
         - --base-path=/ncloud/v1
         - --ingress-class=ncloud.com/alb
-        image: io.ncr.gov-ntruss.com/nks/alb-ingress-controller:0.4.0
+        image: io.ncr.gov-ntruss.com/nks/alb-ingress-controller:0.5.0
         name: alb-ingress-controller
         resources:
           limits:
