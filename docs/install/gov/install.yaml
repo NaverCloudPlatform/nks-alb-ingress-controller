@@ -7,7 +7,7 @@ metadata:
     app.kubernetes.io/name: alb-ingress-controller
 
 ---
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: alb-ingress-controller
@@ -64,7 +64,7 @@ rules:
       - update
 
 ---
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: alb-ingress-controller
@@ -103,13 +103,13 @@ spec:
         args:
         - --api-url=nks.apigw.gov-ntruss.com
         - --base-path=/ncloud/v1
-        image: io.ncr.gov-ntruss.com/nks/alb-ingress-controller:0.1.0
+        image: nks.private-ncr.gov-ntruss.com/alb-ingress-controller:0.1.1
         name: alb-ingress-controller
         resources:
           limits:
             cpu: 100m
-            memory: 30Mi
+            memory: 180Mi
           requests:
             cpu: 100m
-            memory: 20Mi
+            memory: 90Mi
       serviceAccountName: alb-ingress-controller
