@@ -63,6 +63,13 @@ rules:
       - ingresses/status
     verbs:
       - update
+  - apiGroups:
+      - "extensions"
+      - "networking.k8s.io"
+    resources:
+      - ingresses
+    verbs:
+      - patch
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
@@ -117,7 +124,7 @@ spec:
         - --api-url=nks.apigw.fin-ntruss.com
         - --base-path=/ncloud/v1
         - --ingress-class=ncloud.com/alb
-        image: nks.private-ncr.fin-ntruss.com/alb-ingress-controller:0.6.1
+        image: nks.private-ncr.fin-ntruss.com/alb-ingress-controller:0.7.0
         name: alb-ingress-controller
         resources:
           limits:
