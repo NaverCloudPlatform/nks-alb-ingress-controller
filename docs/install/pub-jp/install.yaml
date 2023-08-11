@@ -140,7 +140,8 @@ spec:
         - --api-url=nks.apigw.ntruss.com
         - --base-path=/ncloud/jpn-v1
         - --ingress-class=ncloud.com/alb
-        image: nks.jpn.private-ncr.naverncp.com/alb-ingress-controller:0.7.2
+        - --enable-leader-election=true
+        image: nks.jpn.private-ncr.naverncp.com/alb-ingress-controller:0.7.3
         name: alb-ingress-controller
         resources:
           limits:
