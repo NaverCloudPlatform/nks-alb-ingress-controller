@@ -141,7 +141,7 @@ spec:
         - --base-path=/ncloud/jpn-v1
         - --ingress-class=ncloud.com/alb
         - --enable-leader-election=true
-        image: nks.jpn.private-ncr.naverncp.com/alb-ingress-controller:0.7.3
+        image: nks.jpn.private-ncr.naverncp.com/alb-ingress-controller:0.7.4
         name: alb-ingress-controller
         resources:
           limits:
