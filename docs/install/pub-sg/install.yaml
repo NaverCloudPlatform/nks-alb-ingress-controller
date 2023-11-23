@@ -141,7 +141,7 @@ spec:
         - --base-path=/ncloud/sgn-v1
         - --ingress-class=ncloud.com/alb
         - --enable-leader-election=true
-        image: nks.sg.private-ncr.ntruss.com/alb-ingress-controller:0.7.4
+        image: nks.sg.private-ncr.ntruss.com/alb-ingress-controller:0.8.0
         name: alb-ingress-controller
         resources:
           limits:
